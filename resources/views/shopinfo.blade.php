@@ -10,7 +10,7 @@
 
     <div class="crad-body">
         <ul>
-        <li>เจ้าของร้านค้าาาาา : {{$name}}</li>
+        <li>เจ้าของร้าน : {{$name}}</li>
         <li>โทรศัพท์ : {{$phone}}</li>
         <li>ที่อยู่ : {{$address}}</li>
         </ul>

@@ -60,21 +60,7 @@
                 <span class="nav-link-text">ของแถม</span>
               </a>
             </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">
-                <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Login</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html">
-                <i class="ni ni-circle-08 text-pink"></i>
-                <span class="nav-link-text">Register</span>
-              </a>
-            </li>
-           
-          </ul>
+
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->
@@ -701,8 +687,8 @@
                 </tbody>
               </table>
             </div> -->
-            <!-- Card footer --> 
-<!--            
+            <!-- Card footer -->
+<!--
             <div class="card-footer py-4">
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mb-0">
