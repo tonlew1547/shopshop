@@ -1,6 +1,6 @@
 @extends('layouts.argon_template')
 @section('content')
-@if(session('status'))
+<!-- @if(session('status'))
             <div class="row">
                 <div class="col">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-@endif
+@endif -->
     <div class="row"> 
         <div class="col">
             <div class="card shadow">
