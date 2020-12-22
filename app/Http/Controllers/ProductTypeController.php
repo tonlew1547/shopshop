@@ -84,7 +84,7 @@ class ProductTypeController extends Controller
     public function destroy($id)
     {
         //
-    
+
         $product_types=ProductType::find($id);
         $product_types->delete();
         return back();
