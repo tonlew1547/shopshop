@@ -56,12 +56,13 @@
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
                                         <a href="{{route('products.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
-                                        <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
+                                        <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
+                                        {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>
                         </td>
                             </tr>
                             @endforeach
-                        
+
                         </tbody>
                     </table>
                 </div>
@@ -97,4 +98,4 @@
 
 @section('style')
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-@endsection        
+@endsection

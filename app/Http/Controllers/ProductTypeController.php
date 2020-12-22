@@ -65,7 +65,10 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product_types = ProductType::find($id);
+        $productTypes = ProductType::all()->pluck('name', 'id');
+        return view('product.edit')
+            ->with('productTypes', $productTypes);
     }
 
     /**
@@ -91,6 +94,9 @@ class ProductTypeController extends Controller
         //
 
         $product_types = ProductType::find($id);
+
+        $product_types = ProductType::find($id);
+
         $product_types->delete();
         return back();
     }
