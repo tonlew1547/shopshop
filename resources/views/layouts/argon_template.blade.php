@@ -63,19 +63,20 @@
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('products.index')}}">
+                <a class="nav-link" href="*">
                 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
                 <i class="ni ni-circle-08 text-info"></i>
                   <button type="button" class="btn btn-info">ลูกค้า</button>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('products.index')}}">
+                <a class="nav-link" href="*">
                 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
                 <i class="ni ni-align-left-2 text-danger"></i>
                   <button type="button" class="btn btn-danger">รายละเอียดที่แถมสินค้า</button>
                 </a>
               </li>
+
 
 
           <!-- Divider -->
