@@ -50,18 +50,24 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="{{route('product_types.index')}}">
-                <i class="ni ni-planet text-orange"></i>
                 <button type="button" class="btn btn-warning">ประเภทของแถม</button>
-
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('products.index')}}">
-                <i class="ni ni-pin-3 text-primary"></i>
                 <button type="button" class="btn btn-success">ของแถม</button>
               </a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('products.index')}}">
+                  <button type="button" class="btn btn-info">ลูกค้า</button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('products.index')}}">
+                  <button type="button" class="btn btn-danger">รายละเอียดที่แถมสินค้า</button>
+                </a>
+              </li>
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->
