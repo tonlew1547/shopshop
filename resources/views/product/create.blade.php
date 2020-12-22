@@ -22,6 +22,7 @@
                 {!! Form::text('name', null, ['class' => 'form-control']); !!}
                 </div>
             </div>
+            
                 <div class="col">
                     <div class="form-group">
                     {!! Form::label('product_types_id', 'ประเภทชื่อสินค้า'); !!}
@@ -37,12 +38,7 @@
                         {!! Form::text('cost', null, ['class' => 'form-control']); !!}
                     </div>
                 </div> 
-              <!--      <div class="col">
-                        <div class="form-group">
-                            {!! Form::label('price', 'ราคาขาย'); !!}
-                            {!! Form::text('price', null, ['class' => 'form-control']); !!}
-                        </div>
-                    </div> -->
+              
                         <div class="col-6">
                             <div class="form-group">
                                 {!! Form::label('quantity', 'จำนวนคงเหลือ'); !!}

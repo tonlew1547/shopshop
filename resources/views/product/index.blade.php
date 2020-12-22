@@ -49,7 +49,6 @@
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->productType->name}}</td>
                                 <td>{{$item->cost}}</td>
-                               <!-- <td>{{$item->price}}</td> -->
                                 <td>{{$item->quantity}}</td>
                                 <td><img src="{{ asset('images/'.$item->image) }}" height="100" width="100"></td>
                                  <td>

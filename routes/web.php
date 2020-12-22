@@ -15,19 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/shopinfo','WebController@shopinfo')->name('shopinfo');
+Route::get('/shopinfo', 'WebController@shopinfo')->name('shopinfo');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-Route::resource('product_types','ProductTypeController');
+Route::post('product_tpyes/create', 'ProductTypeController@store');
+Route::resource('product_types', 'ProductTypeController');
 
 Auth::routes();
 Route::post('products/create', 'ProductController@store');
 Route::resource('products', 'ProductController');
-
-
-
-

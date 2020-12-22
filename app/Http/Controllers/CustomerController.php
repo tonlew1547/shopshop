@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
-use App\ProductType;
 
-class ProductTypeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,6 @@ class ProductTypeController extends Controller
     public function index()
     {
         //
-        // $product_types = ProductType::all();
-        $product_types = ProductType::paginate(5);
-        return view('product_type.index')->with('product_types', $product_types);
     }
 
     /**
@@ -27,8 +24,7 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        $productTypes = ProductType::all()->pluck('name', 'id');
-        return view('product_type.create')->with('productTypes', $productTypes);
+        //
     }
 
     /**
@@ -39,20 +35,16 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $product_types = new ProductType();
-        $product_types->name = $request->name;
-        $product_types->save();
-
-        return redirect()->route('product_types.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Customer $customer)
     {
         //
     }
@@ -60,10 +52,10 @@ class ProductTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Customer $customer)
     {
         //
     }
@@ -72,10 +64,10 @@ class ProductTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Customer $customer)
     {
         //
     }
@@ -83,15 +75,11 @@ class ProductTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Customer $customer)
     {
         //
-
-        $product_types = ProductType::find($id);
-        $product_types->delete();
-        return back();
     }
 }
