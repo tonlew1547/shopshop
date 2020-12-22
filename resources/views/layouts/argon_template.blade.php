@@ -51,13 +51,14 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('product_types.index')}}">
                 <i class="ni ni-planet text-orange"></i>
-                <span class="nav-link-text">ประเภทของแถม</span>
+                <button type="button" class="btn btn-warning">ประเภทของแถม</button>
+
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('products.index')}}">
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">ของแถม</span>
+                <button type="button" class="btn btn-success">ของแถม</button>
               </a>
             </li>
 
