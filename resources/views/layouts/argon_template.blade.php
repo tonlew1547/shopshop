@@ -50,24 +50,34 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="{{route('product_types.index')}}">
+                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+                <i class="ni ni-align-center text-warning"></i>
                 <button type="button" class="btn btn-warning">ประเภทของแถม</button>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('products.index')}}">
+                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+                <i class="ni ni-box-2 text-success"></i>
                 <button type="button" class="btn btn-success">ของแถม</button>
               </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('products.index')}}">
+                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+                <i class="ni ni-circle-08 text-info"></i>
                   <button type="button" class="btn btn-info">ลูกค้า</button>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('products.index')}}">
+                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+                <i class="ni ni-align-left-2 text-danger"></i>
                   <button type="button" class="btn btn-danger">รายละเอียดที่แถมสินค้า</button>
                 </a>
               </li>
+
+
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->
