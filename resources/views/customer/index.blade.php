@@ -19,7 +19,7 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">ข้อมูลลูกค้า ({{count($customers)}} รายการ)</h3>
+ <h3 class="mb-0">ข้อมูลลูกค้า ({{count($customer)}} รายการ)</h3>
  </div>
  <div class="col text-right">
  <a href="{{route('customers.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
@@ -40,13 +40,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($customers as $item)
+                        @foreach($customer as $item)
                         <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->tel}}</td>
                                 <td>{{$item->address}}</td>
-                                <td>{{$item->Customer->name}}</td>
+                             <td>
                                     <form class="delete" action="{{route('customers.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
@@ -65,7 +65,7 @@
                     <div class="row">
                     <div class="col"></div>
                     <div class="col-autp">
-                        {{$customers->links()}}
+                        {{$customer->links()}}
                         </div>
                     </div>
                 </div>

@@ -80,7 +80,7 @@
                 <a class="nav-link" href="*">
                 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
                 <i class="ni ni-pin-3 text-danger"></i>
-                  <button type="button" class="btn btn-primary">ตำแหน่งที่ตั้ง</button>
+                  <button type="button" class="btn btn-danger">ตำแหน่งที่ตั้ง</button>
                 </a>
               </li>
 
@@ -339,7 +339,7 @@
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                {{-- <a href="{{route('')}}" class="dropdown-item"> --}}
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
