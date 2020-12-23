@@ -66,9 +66,9 @@ class ProductTypeController extends Controller
     public function edit($id)
     {
         $product_types = ProductType::find($id);
-        $productTypes = ProductType::all()->pluck('name', 'id');
-        return view('product_types.edit')
-            ->with('productTypes', $productTypes);
+        // $productTypes = ProductType::all()->pluck('name', 'id');
+        return view('product_type.edit')
+            ->with('product_type', $product_types);
     }
 
     /**
