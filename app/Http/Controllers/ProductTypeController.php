@@ -39,9 +39,9 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $product_types = new ProductType();
-        $product_types->name = $request->name;
-        $product_types->save();
+        $product_type = new ProductType();
+        $product_type->name = $request->name;
+        $product_type->save();
 
         return redirect()->route('product_types.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
@@ -67,7 +67,7 @@ class ProductTypeController extends Controller
     {
         $product_types = ProductType::find($id);
         $productTypes = ProductType::all()->pluck('name', 'id');
-        return view('product.edit')
+        return view('product_types.edit')
             ->with('productTypes', $productTypes);
     }
 
@@ -80,7 +80,11 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product_type = ProductType::find($id);
+        $product_type->name = $request->name;
+        $product_type->save();
+
+        return redirect()->route('product_types.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 
     /**
@@ -91,12 +95,7 @@ class ProductTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
-
         $product_types = ProductType::find($id);
-
-        $product_types = ProductType::find($id);
-
         $product_types->delete();
         return back();
     }

@@ -36,7 +36,6 @@
                             <th scope="col">ชื่อสินค้า</th>
                             <th scope="col">ประเภท</th>
                             <th scope="col">ราคาทุน</th>
-                        <!--   <th scope="col">ราคาขาย</th> -->
                             <th scope="col">จำนวนคงเหลือ</th>
                             <th scope="col">รูป</th>
                             <th scope="col" style="width: 10%"></th>

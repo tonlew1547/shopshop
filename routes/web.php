@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-Route::post('product_tpyes/create', 'ProductTypeController@store');
+Route::post('product_types/create', 'ProductTypeController@store');
 Route::resource('product_types', 'ProductTypeController');
 
 Auth::routes();
