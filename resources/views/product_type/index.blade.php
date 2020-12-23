@@ -13,7 +13,7 @@
                 </div>
             </div>
 @endif
-    <div class="row"> 
+    <div class="row">
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
@@ -40,13 +40,14 @@
                                     <form class="delete" action="{{route('product_types.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
-                                        <a href="{{route('product_types.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a> 
-                                        <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
+                                        <a href="{{route('product_types.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
+                                        <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
+                                        {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
-                        
+
                         </tbody>
                     </table>
                 </div>
