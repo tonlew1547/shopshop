@@ -19,7 +19,7 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">ข้อมูลสินค้า ({{count($products)}} รายการ)</h3>
+ <h3 class="mb-0">ข้อมูลลูกค้า ({{count($products)}} รายการ)</h3>
  </div>
  <div class="col text-right">
  <a href="{{route('products.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
@@ -33,11 +33,10 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อสินค้า</th>
-                            <th scope="col">ประเภท</th>
-                            <th scope="col">ราคาทุน</th>
-                            <th scope="col">จำนวนคงเหลือ</th>
-                            <th scope="col">รูป</th>
+                            <th scope="col">ชื่อ-สกุล</th>
+                            <th scope="col">เบอร์โทร</th>
+                            <th scope="col">ที่อยู่</th>
+                           
                             <th scope="col" style="width: 10%"></th>
                         </tr>
                         </thead>

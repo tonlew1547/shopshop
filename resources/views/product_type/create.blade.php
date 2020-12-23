@@ -7,7 +7,7 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0">เพิ่มข้อมูลของแถม</h3>
+                        <h3 class="mb-0">เพิ่มประเภทของแถม</h3>
                     </div>
                 </div>
             </div>
