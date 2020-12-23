@@ -18,6 +18,7 @@ class CreateCustomersTable extends Migration
             $table->string('name');
             $table->string('tel');
             $table->text('address')->nullable();
+            $table->foreign('customers_id')->references('id')->on('case_products');
             $table->timestamps();
         });
     }

@@ -19,10 +19,10 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">ข้อมูลลูกค้า ({{count($products)}} รายการ)</h3>
+ <h3 class="mb-0">ข้อมูลลูกค้า ({{count($customers)}} รายการ)</h3>
  </div>
  <div class="col text-right">
- <a href="{{route('products.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
+ <a href="{{route('customers.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
     </div>
         </div>
             </div>
@@ -36,24 +36,21 @@
                             <th scope="col">ชื่อ-สกุล</th>
                             <th scope="col">เบอร์โทร</th>
                             <th scope="col">ที่อยู่</th>
-                           
                             <th scope="col" style="width: 10%"></th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($products as $item)
+                        @foreach($customers as $item)
                         <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
-                                <td>{{$item->productType->name}}</td>
-                                <td>{{$item->cost}}</td>
-                                <td>{{$item->quantity}}</td>
-                                <td><img src="{{ asset('images/'.$item->image) }}" height="100" width="100"></td>
-                                 <td>
-                                    <form class="delete" action="{{route('products.destroy',$item->id)}}" method="POST">
+                                <td>{{$item->tel}}</td>
+                                <td>{{$item->address}}</td>
+                                <td>{{$item->Customer->name}}</td>
+                                    <form class="delete" action="{{route('customers.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
-                                        <a href="{{route('products.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
+                                        <a href="{{route('customers.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
                                         <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
                                         {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>
@@ -68,7 +65,7 @@
                     <div class="row">
                     <div class="col"></div>
                     <div class="col-autp">
-                        {{$products->links()}}
+                        {{$customers->links()}}
                         </div>
                     </div>
                 </div>

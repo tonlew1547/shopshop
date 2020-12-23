@@ -16,7 +16,7 @@ class ProductTypeController extends Controller
     {
         //
         // $product_types = ProductType::all();
-        $product_types = ProductType::paginate(5);
+        $product_types = ProductType::paginate(10);
         return view('product_type.index')->with('product_types', $product_types);
     }
 

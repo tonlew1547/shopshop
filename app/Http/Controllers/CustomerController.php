@@ -14,7 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::paginate(5);
+        return view('customer.index')->with('customers', $customers);
     }
 
     /**
@@ -24,7 +25,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        //$customers = Customer::all()->pluck('name', 'id');
+        //return view('customer.create')->with('customers', $customers);
     }
 
     /**
@@ -35,7 +37,13 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->tel = $request->tel;
+        $customer->address = $request->address;
+        $customer->customer_id = $request->customer_id;
+        $customer->save();
+        return redirect()->route('customers.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 
     /**
@@ -78,8 +86,10 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(Customer $id)
     {
-        //
+        $customer = Customer::find($id);
+        $customer->delete();
+        return back();
     }
 }

@@ -13,6 +13,6 @@ class Product extends Model
 
     public function productType()
     {
-        return $this->beLongsTo('App\ProductType', 'product_types_id','id');
+        return $this->beLongsTo('App\ProductType', 'product_types_id', 'id');
     }
 }

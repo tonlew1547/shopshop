@@ -28,3 +28,7 @@ Route::resource('product_types', 'ProductTypeController');
 Auth::routes();
 Route::post('products/create', 'ProductController@store');
 Route::resource('products', 'ProductController');
+
+Auth::routes();
+Route::post('customers/create', 'CustomerController@store');
+Route::resource('customers', 'CustomerController');

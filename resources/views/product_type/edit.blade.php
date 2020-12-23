@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                   
+                </div>
                 <div class="row mt-2">
                     <div class="col">
                         {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
