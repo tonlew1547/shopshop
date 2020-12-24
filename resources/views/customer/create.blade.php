@@ -27,7 +27,7 @@
            <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        {!! Form::label('tel', 'เบอร์โทร'); !!}
+                        {!! Form::label('tel', 'เบอร์โทรศัพท์'); !!}
                         {!! Form::text('tel', null, ['class' => 'form-control']); !!}
                     </div>
                 </div> 

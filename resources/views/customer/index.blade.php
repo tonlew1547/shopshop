@@ -34,7 +34,7 @@
                         <tr>
                             <th scope="col">ลำดับ</th>
                             <th scope="col">ชื่อ-สกุล</th>
-                            <th scope="col">เบอร์โทร</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
                             <th scope="col">ที่อยู่</th>
                             <th scope="col" style="width: 10%"></th>
                         </tr>

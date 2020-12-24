@@ -63,9 +63,13 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $customer = Customer::find($id);;
+        $Customers = Customer::all()->pluck('name', 'id');
+        return view('customer.edit')
+            ->with('customer', $customer)
+            ->with('Customers', $Customers);
     }
 
     /**
