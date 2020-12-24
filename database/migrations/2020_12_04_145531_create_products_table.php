@@ -17,13 +17,12 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->decimal('cost', 8, 2);
-        //    $table->decimal('price', 8, 2);
+            //    $table->decimal('price', 8, 2);
             $table->decimal('quantity');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('product_types_id');
-            $table->timestamps();
             $table->foreign('product_types_id')->references('id')->on('product_types');
-            
+            $table->timestamps();
         });
     }
 
