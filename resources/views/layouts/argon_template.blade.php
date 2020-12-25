@@ -31,6 +31,12 @@
   <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/argon.css?v=1.2.0')}}" type="text/css">
+
+  <style>
+    .navbar-vertical .navbar-nav .nav-link {
+      font-size:1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -70,10 +76,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="*">
+                <a class="nav-link" href="{{route('case_product.index')}}">
                 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
                 <i class="ni ni-align-left-2 text-danger"></i>
-                  <button type="button" class="btn btn-danger">รายละเอียดที่แถมสินค้า</button>
+                  <button type="button" class="btn bg-light text-blue">รายละเอียดที่แถมสินค้า</button>
                 </a>
               </li>
               <li class="nav-item">

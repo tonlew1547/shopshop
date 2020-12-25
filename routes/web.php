@@ -32,3 +32,7 @@ Route::resource('products', 'ProductController');
 Auth::routes();
 Route::post('customers/create', 'CustomerController@store');
 Route::resource('customers', 'CustomerController');
+
+Auth::routes();
+Route::post('case_product/create', 'CaseproductController@store');
+Route::resource('case_product', 'CaseproductController');

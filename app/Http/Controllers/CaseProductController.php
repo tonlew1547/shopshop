@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Case_product;
+use App\Customer;
+use App\CaseProduct;
 use Illuminate\Http\Request;
 
 class CaseProductController extends Controller
@@ -14,7 +15,9 @@ class CaseProductController extends Controller
      */
     public function index()
     {
-        //
+        // Product::find($id)->decrement('qty',1);
+        $case_product = CaseProduct::paginate(10);
+        return view('case_product.index')->with('case_product', $case_product);
     }
 
     /**
@@ -35,7 +38,12 @@ class CaseProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $case_product = new CaseProduct();
+        $case_product->time = $request->time;
+        $case_product->amount = $request->amount;;
+        $case_product->customer_id = $request->customer_id;
+        $case_product->save();
+        return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 
     /**
@@ -44,7 +52,7 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function show(Case_product $case_product)
+    public function show(CaseProduct $case_product)
     {
         //
     }
@@ -55,7 +63,7 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Case_product $case_product)
+    public function edit(CaseProduct $case_product)
     {
         //
     }
@@ -67,9 +75,16 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Case_product $case_product)
+    public function update(Request $request, CaseProduct $id)
     {
-        //
+        $case_product = CaseProduct::find($id);
+        $case_product->name = $request->name;
+        $case_product->time = $request->time;
+        $case_product->amount = $request->amount;
+        $case_product->customer_id = $request->customer_id;
+        $case_product->save();
+
+        return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 
     /**
@@ -78,8 +93,10 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Case_product $case_product)
+    public function destroy(CaseProduct $id)
     {
-        //
+        $case_product = CaseProduct::find($id);
+        $case_product->delete();
+        return back();
     }
 }
