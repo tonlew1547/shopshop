@@ -54,43 +54,36 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('product_types.index')}}">
-                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-                <i class="ni ni-align-center text-warning"></i>
-                <button type="button" class="btn btn-warning">ประเภทของแถม</button>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('product_types.index')}}">
+                <i class="ni ni-align-center"></i>
+                <span class="nav-link-text">ประเภทของแถม</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('products.index')}}">
-                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-                <i class="ni ni-box-2 text-success"></i>
-                <button type="button" class="btn btn-success">ของแถม</button>
-              </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('customers.index')}}">
-                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-                <i class="ni ni-circle-08 text-info"></i>
-                  <button type="button" class="btn btn-info">ลูกค้า</button>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('case_product.index')}}">
-                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-                <i class="ni ni-align-left-2 text-danger"></i>
-                  <button type="button" class="btn bg-light text-blue">รายละเอียดที่แถมสินค้า</button>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="*">
-                <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-                <i class="ni ni-pin-3 text-danger"></i>
-                  <button type="button" class="btn btn-danger">ตำแหน่งที่ตั้ง</button>
-                </a>
-              </li>
-
-
+              <i class="ni ni-satisfied"></i>
+              <span class="nav-link-text">ของแถม</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('customers.index')}}">
+            <i class="ni ni-circle-08"></i>
+            <span class="nav-link-text">ลูกค้า</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('case_product.index')}}">
+          <i class="ni ni-single-copy-04"></i>
+          <span class="nav-link-text">รายละเอียดที่แถมสินค้า</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="*">
+        <i class="ni ni-pin-3"></i>
+        <span class="nav-link-text">ตำแหน่งที่ตั้ง</span>
+      </a>
+    </li>
           <!-- Divider -->
           <hr class="my-3">
           <!-- Heading -->
@@ -99,40 +92,40 @@
           </h6> -->
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-            <!-- <li class="nav-item">
+            {{-- <!-- <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Getting started</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
+            </li> --}}
+            {{-- <li class="nav-item">
+<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
                 <i class="ni ni-palette"></i>
                 <span class="nav-link-text">Foundation</span>
-              </a>
-            </li>
+              </a> --}}
+            {{-- </li>
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Components</span>
-              </a>
-            </li>
+              </a> --}}
+            {{-- </li>
             <li class="nav-item">
               <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
                 <i class="ni ni-chart-pie-35"></i>
                 <span class="nav-link-text">Plugins</span>
               </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
               <a class="nav-link active active-pro" href="upgrade.html">
                 <i class="ni ni-send text-dark"></i>
                 <span class="nav-link-text">Upgrade to PRO</span>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>
-    </div> -->
+    </div>
   </nav>
   <!-- Main content -->
   <div class="main-content" id="panel">
