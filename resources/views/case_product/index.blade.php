@@ -22,7 +22,7 @@
  <h3 class="mb-0">รายละเอียดที่แถมสินค้า ({{count($case_product)}} รายการ)</h3>
  </div>
  <div class="col text-right">
- <a href="{{route('customers.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
+ <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
     </div>
         </div>
             </div>
@@ -46,12 +46,12 @@
                                 <td>{{$item->time}}</td>
                                 <td>{{$item->amount}}</td>
                                 <td>{{$item->address}}</td>
-                                <td>{{$item->customer->name}}</td>
+                                <td>{{$item->case_product->name}}</td>
                              <td>
-                                    <form class="delete" action="{{route('customers.destroy',$item->id)}}" method="POST">
+                                    <form class="delete" action="{{route('case_product.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
-                                        <a href="{{route('customers.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
+                                        <a href="{{route('case_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
                                         <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
                                         {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>

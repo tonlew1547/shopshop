@@ -27,7 +27,8 @@ class CaseProductController extends Controller
      */
     public function create()
     {
-        //
+        $case_product = CaseProduct::all()->pluck('name', 'id');
+        return view('case_product.create')->with('case_product', $case_product);
     }
 
     /**
