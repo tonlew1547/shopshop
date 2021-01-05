@@ -16,7 +16,7 @@
                 <form action="{{route('customers.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-12 col-sm-4">
                             <div class="form-group">
                                 {!! Form::label('name', 'ชื่อ-สกุล'); !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']); !!}
@@ -25,7 +25,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col">
                             <div class="form-group">
                                 {!! Form::label('tel', 'เบอร์โทรศัพท์'); !!}
                                 {!! Form::text('tel', null, ['class' => 'form-control']); !!}
@@ -35,12 +35,13 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                </form>
                                 {!! Form::label('address', 'ที่อยู่'); !!}
                                 {!! Form::text('address', null, ['class' => 'form-control']); !!}
                             </div>
                         </div>
                     </div>
+
+
                     <div class="row mt-2">
                         <div class="col">
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}

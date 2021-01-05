@@ -329,13 +329,13 @@
                     <img alt="Image placeholder" src="{{asset('assets/img/theme/12.jpg')}}">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">******</span>
+                    <span class="mb-0 text-sm  font-weight-bold">KUNRUETHAI</span>
                   </div>
                 </div>
               </a>
               <div class="dropdown-menu  dropdown-menu-right ">
                 <div class="dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Welcome</h6>
+                  <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
                 <div class="dropdown-divider"></div>
                 {{-- <a href="{{route('')}}" class="dropdown-item"> --}}
