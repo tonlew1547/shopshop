@@ -38,8 +38,7 @@
                                         });
                                     </script>
                              </p>
-                                {!! Form::label('name', 'วันที่แถม'); !!}
-                                {!! Form::text('name', null, ['class' => 'form-control']); !!}
+                           
                             </div>
                         </div>
 
