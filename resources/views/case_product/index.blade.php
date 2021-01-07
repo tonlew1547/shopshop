@@ -34,8 +34,8 @@
                         <tr>
                             <th scope="col">ลำดับ</th>
                             <th scope="col">เวลาที่แถม</th>
+                            <th scope="col">ชื่อลูกค้า</th>
                             <th scope="col">จำนวนของแถม</th>
-                            <th scope="col">ที่อยู่</th>
                             <th scope="col" style="width: 10%"></th>
                         </tr>
                         </thead>
@@ -44,9 +44,9 @@
                         <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->time}}</td>
+                                <td>{{$item->customer->name}}</td>
                                 <td>{{$item->amount}}</td>
-                                <td>{{$item->address}}</td>
-                                <td>{{$item->case_product->name}}</td>
+                               
                              <td>
                                     <form class="delete" action="{{route('case_product.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">

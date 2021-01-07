@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\CaseProduct;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CaseProductController extends Controller
@@ -27,8 +28,10 @@ class CaseProductController extends Controller
      */
     public function create()
     {
-        $case_product = CaseProduct::all()->pluck('name', 'id');
-        return view('case_product.create')->with('case_product', $case_product);
+        // $case_product = CaseProduct::all()->pluck('name', 'id');
+        $data['customer'] = Customer::all();
+        $data['product'] = Product::all();
+        return view('case_product.create', $data);
     }
 
     /**
@@ -39,6 +42,7 @@ class CaseProductController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $case_product = new CaseProduct();
         $case_product->time = $request->time;
         $case_product->amount = $request->amount;;
