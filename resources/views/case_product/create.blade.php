@@ -31,7 +31,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group">
                                 <body>
-                                    <p>วันที่แถม 
+                                    <p>วันที่แถม
                                     <input id="datepicker" name="time"  width="276" />
                                     <script>
                                         $('#datepicker').datepicker({
@@ -41,12 +41,16 @@
                              </p>
                                 {{-- {!! Form::label('name', 'วันที่แถม'); !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']); !!} --}}
+
                             </div>
                         </div>
                     </div>
                    
                     <div class="row" >
                         <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+
                             <div class="form-group">
                                 {!! Form::label('customer', 'ลูกค้า'); !!}
                                 <select class="form-control" name="customer_id" id="customer_id">
@@ -68,6 +72,10 @@
                                 {!! Form::label('customer', 'ของแถม'); !!}
 
                                 
+                                <div class="form-group">
+                                    <label for="address">ที่อยู่</label>
+                                    <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                                  </div>
                             </div>
                         </div>
                     </div>
