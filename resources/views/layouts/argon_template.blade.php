@@ -329,7 +329,7 @@
                     <img alt="Image placeholder" src="{{asset('assets/img/theme/12.jpg')}}">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">KUNRUETHAI</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
                   </div>
                 </div>
               </a>
@@ -339,9 +339,19 @@
                 </div>
                 <div class="dropdown-divider"></div>
                 {{-- <a href="{{route('')}}" class="dropdown-item"> --}}
-                  <i class="ni ni-user-run"></i>
-                  <span>Logout</span>
+                  {{-- <i class="ni ni-user-run"></i>
+                  <span>Logout</span> --}}
+
+                {{-- </a> --}}
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
                 </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
               </div>
             </li>
           </ul>
@@ -1052,7 +1062,7 @@
   <script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
-  
+
 </body>
 
 </html>

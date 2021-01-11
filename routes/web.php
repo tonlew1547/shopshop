@@ -15,24 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/shopinfo', 'WebController@shopinfo')->name('shopinfo');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-Route::post('product_types/create', 'ProductTypeController@store');
-Route::resource('product_types', 'ProductTypeController');
 
-Auth::routes();
-Route::post('products/create', 'ProductController@store');
-Route::resource('products', 'ProductController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/shopinfo', 'WebController@shopinfo')->name('shopinfo');
 
-Auth::routes();
-Route::post('customers/create', 'CustomerController@store');
-Route::resource('customers', 'CustomerController');
+    Route::post('product_types/create', 'ProductTypeController@store');
+    Route::resource('product_types', 'ProductTypeController');
 
-Auth::routes();
-Route::post('case_product/create', 'CaseproductController@store');
-Route::resource('case_product', 'CaseproductController');
+
+    Route::post('products/create', 'ProductController@store');
+    Route::resource('products', 'ProductController');
+
+
+    Route::post('customers/create', 'CustomerController@store');
+    Route::resource('customers', 'CustomerController');
+
+
+    Route::post('case_product/create', 'CaseproductController@store');
+    Route::resource('case_product', 'CaseproductController');
+});
+
