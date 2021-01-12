@@ -47,6 +47,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
+        <a class="nav-link" href="{{Route('shopinfo')}}">
           <img src="{{asset('assets/img/brand/TSolu-Logo.png')}}" class="navbar-brand-img" alt="...">
         </a>
       </div>
