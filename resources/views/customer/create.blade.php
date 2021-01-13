@@ -16,7 +16,7 @@
                 <form action="{{route('customers.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-9 col-sm-8">
+                        <div class="col-6">
                             <div class="form-group">
                                 {!! Form::label('name', 'ชื่อ-สกุล'); !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']); !!}

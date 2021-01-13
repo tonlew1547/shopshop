@@ -28,10 +28,10 @@
                     @csrf
 
                     <div class="row">
-                        <div class="col-12 col-sm-4">
+                        <div class="col-15 col-sm-4">
                             <div class="form-group">
                                 <body>
-                                    <p>วันที่แถม 
+                                    <p>วันที่แถม
                                     <input id="datepicker" name="time"  width="276" />
                                     <script>
                                         $('#datepicker').datepicker({
@@ -44,9 +44,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="row" >
-                        <div class="col">
+                        <div class="col-6">
                             <div class="form-group">
                                 {!! Form::label('customer', 'ลูกค้า'); !!}
                                 <select class="form-control" name="customer_id" id="customer_id">
@@ -54,13 +54,13 @@
                                 @forelse ($customer as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @empty
-                                    
+
                                 @endforelse
-                                </select>   
+                                </select>
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="row">
                         <div class="col">
                             <table class="table">
@@ -82,17 +82,17 @@
                                         <td><input type="number" class="form-control" name="amount[]" id="amount"></td>
                                     </tr>
                                     @empty
-                                        
+
                                     @endforelse
-                                    
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                   
-                       
-                
+
+
+
 
                     <div class="row mt-2">
                         <div class="col">

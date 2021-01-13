@@ -1,5 +1,5 @@
 @extends('layouts.argon_template')
- 
+
  @section('content')
  <div class="row">
     <div class="col">
@@ -16,13 +16,13 @@
         <form action="{{route('product_types.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-            <div class="col">
+            <div class="col-6">
                 <div class="form-group">
                 {!! Form::label('name', 'ชื่อสินค้าของแถม'); !!}
                 {!! Form::text('name', null, ['class' => 'form-control']); !!}
                 </div>
             </div>
-        </div> 
+        </div>
                     <div class="row mt-2">
                         <div class="col">
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}

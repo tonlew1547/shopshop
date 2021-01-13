@@ -22,12 +22,12 @@
             </div>
         <div class="card-body pt-0" style="min-height: 50vh">
         {!! Form::model($case_product, ['url' => route('case_product.update',$case_product->id),'method' => 'put','enctype'=>"multipart/form-data"])!!}
-       
+
         <div class="row">
             <div class="col-12 col-sm-4">
                 <div class="form-group">
                     <body>
-                        <p>วันที่แถม 
+                        <p>วันที่แถม
                         <input id="datepicker" name="time"  width="276" />
                         <script>
                             $('#datepicker').datepicker({
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="col">
             <div class="form-group">
             {!! Form::label('customer_id', 'ชื่อลูกค้า'); !!}
@@ -59,7 +59,7 @@
                     <th>จำนวน</th>
                 </tr>
             </thead>
-   
+
             <tbody>
                 @forelse ($product as $item)
                 <tr>
@@ -69,9 +69,9 @@
                     <td><input type="number" class="form-control" name="amount[]" id="amount"></td>
                 </tr>
                 @empty
-                    
+
                 @endforelse
-                
+
             </tbody>
         </table>
     </div>
