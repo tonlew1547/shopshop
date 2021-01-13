@@ -45,9 +45,17 @@ class CaseProductController extends Controller
         // dd($request->all());
         $case_product = new CaseProduct();
         $case_product->time = $request->time;
-        $case_product->amount = $request->amount;;
+        $case_product->amount = isset($request->product_id) ? count($request->product_id) : 0;
         $case_product->customer_id = $request->customer_id;
         $case_product->save();
+
+        if (isset($request->product_id) && count($request->product_id) > 0) {
+            foreach ($request->product_id as $key => $value) {
+            }
+        } else {
+            # code...
+        }
+
         return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 
@@ -68,9 +76,18 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function edit(CaseProduct $case_product)
+    public function edit($id)
     {
-        //
+        // $data['customer'] = Customer::all();
+        // $data['product'] = Product::all();
+        // return view('case_product.edit', $data);
+
+        $case_product = CaseProduct::find($id);;
+        $Customers = Customer::all()->pluck('name', 'id');
+        // $product = Product::all()->pluck('name', 'id');
+        return view('case_product.edit')
+            ->with('case_product', $case_product)
+            ->with('Customers', $Customers);
     }
 
     /**
@@ -98,8 +115,9 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CaseProduct $id)
+    public function destroy($id)
     {
+        // dd($id);
         $case_product = CaseProduct::find($id);
         $case_product->delete();
         return back();

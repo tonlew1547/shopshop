@@ -51,6 +51,7 @@
                                     <form class="delete" action="{{route('case_product.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
+                                        <a href="{{route('case_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> รายละเอียดเพิ่มเติม</a>
                                         <a href="{{route('case_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
                                         <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
                                         {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}

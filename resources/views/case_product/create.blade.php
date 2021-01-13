@@ -31,7 +31,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group">
                                 <body>
-                                    <p>วันที่แถม
+                                    <p>วันที่แถม 
                                     <input id="datepicker" name="time"  width="276" />
                                     <script>
                                         $('#datepicker').datepicker({
@@ -41,16 +41,12 @@
                              </p>
                                 {{-- {!! Form::label('name', 'วันที่แถม'); !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']); !!} --}}
-
                             </div>
                         </div>
                     </div>
                    
                     <div class="row" >
                         <div class="col">
-                    <div class="row">
-                        <div class="col-3">
-
                             <div class="form-group">
                                 {!! Form::label('customer', 'ลูกค้า'); !!}
                                 <select class="form-control" name="customer_id" id="customer_id">
@@ -65,26 +61,12 @@
                         </div>
                     </div>
                 
-                 
-                    <div class="row" >
-                        <div class="col">
-                            <div class="form-group">
-                                {!! Form::label('customer', 'ของแถม'); !!}
-
-                                
-                                <div class="form-group">
-                                    <label for="address">ที่อยู่</label>
-                                    <textarea class="form-control" id="address" name="address" rows="3"></textarea>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="row">
                         <div class="col">
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <P>เลือกของแถมสินค้าได้มากกว่า 1 รายการ </p>
                                         <th>เลือก</th>
                                         <th>สินค้า</th>
                                         <th>จำนวน</th>
@@ -94,10 +76,10 @@
                                 <tbody>
                                     @forelse ($product as $item)
                                     <tr>
-                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[]" id="" value="{{$item->id}}">
+                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[]" id="product_id" value="{{$item->id}}">
                                         </td>
                                         <td>{{$item->name}}</td>
-                                        <td><input type="number" class="form-control" name="amount" id=""></td>
+                                        <td><input type="number" class="form-control" name="amount[]" id="amount"></td>
                                     </tr>
                                     @empty
                                         
