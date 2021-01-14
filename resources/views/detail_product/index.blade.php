@@ -19,10 +19,10 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">รายละเอียดที่แถมสินค้า ({{count($case_product)}} รายการ)</h3>
+ <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($detail_product)}} รายการ)</h3>
  </div>
  <div class="col text-right">
- <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
+ {{-- <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a> --}}
     </div>
         </div>
             </div>
@@ -43,16 +43,15 @@
                         @foreach($case_product as $item)
                         <tr>
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->time}}</td>
+                                <td>{{$item->detail_time}}</td>
                                 <td>{{$item->customer->name}}</td>
-                                <td>{{$item->amount}}</td>
+                                <td>{{$item->detail_amount}}</td>
                                
                              <td>
-                                    <form class="delete" action="{{route('case_product.destroy',$item->id)}}" method="POST">
+                                    <form class="delete" action="{{route('detail_product.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
-                                        <a href="{{route('detail_product.index',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> รายละเอียดเพิ่มเติม</a>
-                                        <a href="{{route('case_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
+                                        <a href="{{route('detail_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
                                         <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
                                         {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>
@@ -67,7 +66,7 @@
                     <div class="row">
                     <div class="col"></div>
                     <div class="col-autp">
-                        {{$case_product->links()}}
+                        {{$detail_product->links()}}
                         </div>
                     </div>
                 </div>

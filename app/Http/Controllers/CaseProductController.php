@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\CaseProduct;
 use App\Product;
+use App\Detail_product;
+use App\DetailProduct;
 use Illuminate\Http\Request;
 
 class CaseProductController extends Controller
@@ -49,8 +51,19 @@ class CaseProductController extends Controller
         $case_product->customer_id = $request->customer_id;
         $case_product->save();
 
+        // dd($request->all());
+
+
         if (isset($request->product_id) && count($request->product_id) > 0) {
             foreach ($request->product_id as $key => $value) {
+                $product = Product::find($value);
+                $detail = new DetailProduct();
+                $detail->cost = $product->cost;
+                $detail->amount = $request->amount[$key];
+                $detail->case_product_id  = $case_product->id;
+                $detail->product_id  = $value;
+                $detail->save();
+                $product->decrement('quantity', $request->amount[$key]);
             }
         } else {
             # code...

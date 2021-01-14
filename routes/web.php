@@ -38,5 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('case_product/create', 'CaseproductController@store');
     Route::resource('case_product', 'CaseproductController');
-});
 
+    Route::post('detail_product/create', 'DetailproductController@store');
+    Route::resource('detail_product', 'DetailproductController');
+});

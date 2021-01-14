@@ -15,7 +15,7 @@ class CreateCaseProductsTable extends Migration
     {
         Schema::create('case_products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('time');
+            $table->string('time');
             $table->string('amount', 100)->nullable()->default('text');
             $table->timestamps();
         });

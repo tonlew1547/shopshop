@@ -16,8 +16,6 @@ class CreateDetailProductsTable extends Migration
         Schema::create('detail_products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('detail_time');
-            $table->string('detail_amount');
         });
     }
 
