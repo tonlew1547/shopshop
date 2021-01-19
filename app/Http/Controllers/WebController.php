@@ -19,4 +19,9 @@ class WebController extends Controller
         ]);
 
     }
+
+    public function showmap()
+    {
+        return view('showMap');
+    }
 }

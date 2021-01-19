@@ -42,7 +42,25 @@ class ProductTypeController extends Controller
         $product_type = new ProductType();
         $product_type->name = $request->name;
         $product_type->save();
-
+/*
+        $token = "RVOhWjIQBIfFrMtydp4uyh8FKsk2qpiBE42WCaFGTij"; //ใส่Token ที่copy เอาไว้
+        $str = "มีการเพิ่มเประเภทสินค้า => ".$request->name; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
+        
+        $queryData = array('message' => $str);
+        $queryData = http_build_query($queryData,'','&');
+        $headerOptions = array( 
+                'http'=>array(
+                    'method'=>'POST',
+                    'header'=> "Content-Type: application/x-www-form-urlencoded\r\n"
+                            ."Authorization: Bearer ".$token."\r\n"
+                            ."Content-Length: ".strlen($queryData)."\r\n",
+                    'content' => $queryData
+                ),
+        );
+        $context = stream_context_create($headerOptions);
+        $result = file_get_contents("https://notify-api.line.me/api/notify",FALSE,$context);
+        $res = json_decode($result);
+*/
         return redirect()->route('product_types.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 

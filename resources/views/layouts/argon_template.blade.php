@@ -82,7 +82,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="*">
+        <a class="nav-link" href="map">
         <i class="ni ni-pin-3"></i>
         <span class="nav-link-text">ตำแหน่งที่ตั้ง</span>
       </a>

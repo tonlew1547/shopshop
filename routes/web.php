@@ -20,7 +20,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/shopinfo', 'WebController@shopinfo')->name('shopinfo');
 
@@ -38,6 +37,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('case_product/create', 'CaseproductController@store');
     Route::resource('case_product', 'CaseproductController');
+<<<<<<< Updated upstream
+=======
+
+    Route::get('/map', 'WebController@showmap');
+
+});
+>>>>>>> Stashed changes
 
     Route::post('detail_product/create', 'DetailproductController@store');
     Route::resource('detail_product', 'DetailproductController');
