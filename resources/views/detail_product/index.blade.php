@@ -19,7 +19,7 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($detail_product)}} รายการ)</h3>
+ <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($case_product->detail_products)}} รายการ)<p> คุณ {{$case_product->customer->name}} วันที่แถมสินค้า {{$case_product->time}}</h3> </p>
  </div>
  <div class="col text-right">
  {{-- <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a> --}}
@@ -33,28 +33,26 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">ลำดับ</th>
-                            <th scope="col">เวลาที่แถม</th>
-                            <th scope="col">ชื่อลูกค้า</th>
+                            <th scope="col">ชิ่อสินค้า</th>
                             <th scope="col">จำนวนของแถม</th>
+                            <th scope="col">ราคาต้นทุน</th>
+                    
+                            
                             <th scope="col" style="width: 10%"></th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($case_product as $item)
+                        @foreach($case_product->detail_products as $item)
+                    
                         <tr>
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->detail_time}}</td>
-                                <td>{{$item->customer->name}}</td>
-                                <td>{{$item->detail_amount}}</td>
+                                <td>{{$item->product->name}}</td>
+                                <td>{{$item->amount}}</td>
+                                <td>{{$item->cost}}</td>
+                                
                                
                              <td>
-                                    <form class="delete" action="{{route('detail_product.destroy',$item->id)}}" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        {{ csrf_field() }}
-                                        <a href="{{route('detail_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
-                                        <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
-                                        {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
-                                    </form>
+                      </form>
                         </td>
                             </tr>
                             @endforeach
@@ -62,14 +60,14 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer py-4">
+                {{-- <div class="card-footer py-4">
                     <div class="row">
                     <div class="col"></div>
                     <div class="col-autp">
-                        {{$detail_product->links()}}
+                        {{$case_product->detail_products->links()}}
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

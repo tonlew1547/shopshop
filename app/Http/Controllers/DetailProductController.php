@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Detailproduct;
+use App\DetailProduct;
 use App\Customer;
 use App\CaseProduct;
 use App\Product;
@@ -18,8 +18,8 @@ class DetailProductController extends Controller
      */
     public function index()
     {
-        $detail_product = Detailproduct::paginate(10);
-        return view('detail_product.index')->with('detail_product', $detail_product);
+        // $detail_product = DetailProduct::paginate(10);
+        // return view('detail_product.index')->with('detail_product', $detail_product);
     }
 
     /**
@@ -29,9 +29,9 @@ class DetailProductController extends Controller
      */
     public function create()
     {
-        // $data['customer'] = Customer::all();
-        // $data['product'] = Product::all();
-        // return view('detail_product.create', $data);
+        $data['customer'] = Customer::all();
+        $data['product'] = Product::all();
+        return view('detail_product.create', $data);
     }
 
     /**
@@ -42,7 +42,7 @@ class DetailProductController extends Controller
      */
     public function store(Request $request)
     {
-        $detail_product = new Detailproduct();
+        $detail_product = new DetailProduct();
         $detail_product->detail_time = $request->time;
         $detail_product->detail_amount = isset($request->case_products_id) ? count($request->case_products_id) : 0;
         $detail_product->case_products_id = $request->case_products_id;
@@ -64,7 +64,7 @@ class DetailProductController extends Controller
      * @param  \App\Detail_product  $detail_product
      * @return \Illuminate\Http\Response
      */
-    public function show(Detailproduct $detail_product)
+    public function show(DetailProduct $detail_product)
     {
         //
     }
@@ -75,7 +75,7 @@ class DetailProductController extends Controller
      * @param  \App\Detail_product  $detail_product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detailproduct $detail_product)
+    public function edit(DetailProduct $detail_product)
     {
         //
     }
@@ -89,7 +89,7 @@ class DetailProductController extends Controller
      */
     public function update(Request $request, Detailproduct $id)
     {
-        $detail_product = Detailproduct::find($id);
+        $detail_product = DetailProduct::find($id);
         $detail_product->name = $request->name;
         $detail_product->time = $request->time;
         $detail_product->amount = $request->amount;
@@ -105,7 +105,7 @@ class DetailProductController extends Controller
      * @param  \App\Detail_product  $detail_product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detailproduct $detail_product)
+    public function destroy(DetailProduct $detail_product)
     {
         //
     }

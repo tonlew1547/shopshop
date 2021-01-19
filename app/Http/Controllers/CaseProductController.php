@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\CaseProduct;
 use App\Product;
-use App\Detail_product;
 use App\DetailProduct;
 use Illuminate\Http\Request;
 
@@ -80,7 +79,8 @@ class CaseProductController extends Controller
      */
     public function show(CaseProduct $case_product)
     {
-        //
+
+        return view('detail_product.index')->with('case_product', $case_product);
     }
 
     /**
@@ -89,18 +89,14 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CaseProduct $case_product)
     {
-        // $data['customer'] = Customer::all();
-        // $data['product'] = Product::all();
-        // return view('case_product.edit', $data);
-
-        $case_product = CaseProduct::find($id);;
-        $Customers = Customer::all()->pluck('name', 'id');
-        // $product = Product::all()->pluck('name', 'id');
-        return view('case_product.edit')
-            ->with('case_product', $case_product)
-            ->with('Customers', $Customers);
+        $data['customer'] = Customer::all();
+        $data['product'] = Product::all();
+        $data['case_product'] = $case_product;
+        $data['detail_product'] = DetailProduct::where('case_product_id', $case_product->id)->get()->keyBy('product_id');
+        // dd($data);
+        return view('case_product.edit', $data);
     }
 
     /**
@@ -110,14 +106,31 @@ class CaseProductController extends Controller
      * @param  \App\Case_product  $case_product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CaseProduct $id)
+    public function update(Request $request, CaseProduct $case_product)
     {
-        $case_product = CaseProduct::find($id);
-        $case_product->name = $request->name;
+
         $case_product->time = $request->time;
-        $case_product->amount = $request->amount;
+        $case_product->amount = isset($request->product_id) ? count($request->product_id) : 0;
         $case_product->customer_id = $request->customer_id;
         $case_product->save();
+
+        // dd($request->all());
+
+        DetailProduct::where('case_product_id', $case_product->id)->delete();
+        if (isset($request->product_id) && count($request->product_id) > 0) {
+            foreach ($request->product_id as $key => $value) {
+                $product = Product::find($value);
+                $detail = new DetailProduct();
+                $detail->cost = $product->cost;
+                $detail->amount = $request->amount[$key];
+                $detail->case_product_id  = $case_product->id;
+                $detail->product_id  = $value;
+                $detail->save();
+                $product->decrement('quantity', $request->amount[$key]);
+            }
+        } else {
+            # code...
+        }
 
         return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
@@ -133,6 +146,9 @@ class CaseProductController extends Controller
         // dd($id);
         $case_product = CaseProduct::find($id);
         $case_product->delete();
+        // $detail_product = DetailProduct::find($id);
+        // $detail_product->delete();
+
         return back();
     }
 }

@@ -18,8 +18,11 @@ class AddColumnToDetailTable extends Migration
             $table->decimal('cost', 50, 2)->after('id');
             $table->integer('amount')->after('cost');
             $table->unsignedBigInteger('case_product_id')->nullable();
-            $table->foreign('case_product_id')->references('id')->on('case_products');
+
+            $table->foreign('case_product_id')->references('id')->on('case_products')->onDelete('cascade');
+
             $table->unsignedBigInteger('product_id')->nullable();
+
             $table->foreign('product_id')->nullable()->references('id')->on('products');
         });
     }

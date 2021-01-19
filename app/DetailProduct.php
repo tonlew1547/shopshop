@@ -12,4 +12,9 @@ class DetailProduct extends Model
     {
         return $this->beLongsTo('App\CaseProduct', 'case_products_id', 'id');
     }
+
+    public function product()
+    {
+        return $this->beLongsTo('App\Product', 'product_id', 'id');
+    }
 }

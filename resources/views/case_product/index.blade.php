@@ -33,7 +33,7 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">ลำดับ</th>
-                            <th scope="col">เวลาที่แถม</th>
+                            <th scope="col">วันที่แถมสินค้า</th>
                             <th scope="col">ชื่อลูกค้า</th>
                             <th scope="col">จำนวนของแถม</th>
                             <th scope="col" style="width: 10%"></th>
@@ -51,8 +51,8 @@
                                     <form class="delete" action="{{route('case_product.destroy',$item->id)}}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         {{ csrf_field() }}
-                                        <a href="{{route('detail_product.index',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> รายละเอียดเพิ่มเติม</a>
-                                        <a href="{{route('case_product.edit',$item->id)}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
+                                        <a href="{{url('case_product/'.$item->id)}}"class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> รายละเอียดเพิ่มเติม</a>
+                                        <a href="{{url('case_product/'.$item->id.'/edit')}}" class="btn btn-sm btn-outline-success"> <i class="fa fa-edit"></i> แก้ไข</a>
                                         <button type="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button>
                                         {{-- <button type="submit" class="btn btn-sm btn-outline-danger"> <i class="fa fa-trash"></i> ลบ</button> --}}
                                     </form>
