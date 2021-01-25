@@ -22,7 +22,8 @@
  <h3 class="mb-0">รายละเอียดที่แถมสินค้า ({{count($case_product)}} รายการ)</h3>
  </div>
  <div class="col text-right">
- <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
+    <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a>
+ 
     </div>
         </div>
             </div>

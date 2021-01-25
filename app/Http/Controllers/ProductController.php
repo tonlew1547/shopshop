@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         //
         // $products = Product::all();
-        $products = Product::paginate(10);
+        $products = Product::paginate(5);
         return view('product.index')->with('products', $products);
     }
 
@@ -47,6 +47,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->cost = $request->cost;
+        // $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->product_types_id = $request->product_types_id;
         // dd($request->all());
@@ -140,5 +141,44 @@ class ProductController extends Controller
         $products = Product::find($id);
         $products->delete();
         return back();
+    }
+    public function line()
+    {
+
+        $token = "RVOhWjIQBIfFrMtydp4uyh8FKsk2qpiBE42WCaFGTij"; //ใส่Token ที่copy เอาไว้
+
+        $products = Product::where("line_notify","Y")->get();
+        if (count($products) > 0) {
+
+            $str = "วันที่ " . date('d/m/Y');
+            foreach ($products as $key => $value) {
+                $str .= "\n  - {$value->name} : {$value->quantity}";
+            }
+
+
+            $queryData = array('message' => $str);
+            $queryData = http_build_query($queryData, '', '&');
+            $headerOptions = array(
+                'http' => array(
+                    'method' => 'POST',
+                    'header' => "Content-Type: application/x-www-form-urlencoded\r\n"
+                        . "Authorization: Bearer " . $token . "\r\n"
+                        . "Content-Length: " . strlen($queryData) . "\r\n",
+                    'content' => $queryData
+                ),
+            );
+            $context = stream_context_create($headerOptions);
+            $result = file_get_contents("https://notify-api.line.me/api/notify", FALSE, $context);
+            $res = json_decode($result);
+        }
+
+
+        return redirect('products');
+    }
+
+    function notifyCheck(Product $product){
+        $product->line_notify = ($product->line_notify == "Y" ? "N" : "Y");
+        $product->save();
+        return redirect('products');
     }
 }

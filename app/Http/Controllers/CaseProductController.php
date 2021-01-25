@@ -131,7 +131,11 @@ class CaseProductController extends Controller
         } else {
             # code...
         }
-
+       
+       
+        $context = stream_context_create($headerOptions);
+        $result = file_get_contents("https://notify-api.line.me/api/notify",FALSE,$context);
+        $res = json_decode($result);
         return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 

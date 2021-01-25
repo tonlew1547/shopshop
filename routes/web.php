@@ -37,16 +37,20 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('case_product/create', 'CaseproductController@store');
     Route::resource('case_product', 'CaseproductController');
-<<<<<<< Updated upstream
-=======
 
-    Route::get('/map', 'WebController@showmap');
+
+    Route::get('/map', 'WebController@showMap');
+
+    Route::get('/line', 'ProductController@line');
+
+    Route::get('/notify_check/{product}', 'ProductController@notifyCheck');
 
 });
->>>>>>> Stashed changes
+
 
     Route::post('detail_product/create', 'DetailproductController@store');
     Route::resource('detail_product', 'DetailproductController');
 
     Route::post('case_product_update/{case_product}', 'CaseproductController@update');
-});
+
+
