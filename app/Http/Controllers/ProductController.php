@@ -137,17 +137,22 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+
         $products = Product::find($id);
         $products->delete();
+        // unlink(public_path('images/products/' . $products->image));
         return back();
     }
+
+
+    // แจ้งเตือนไลน์
+
     public function line()
     {
 
         $token = "RVOhWjIQBIfFrMtydp4uyh8FKsk2qpiBE42WCaFGTij"; //ใส่Token ที่copy เอาไว้
 
-        $products = Product::where("line_notify","Y")->get();
+        $products = Product::where("line_notify", "Y")->get();
         if (count($products) > 0) {
 
             $str = "วันที่ " . date('d/m/Y');
@@ -176,7 +181,8 @@ class ProductController extends Controller
         return redirect('products');
     }
 
-    function notifyCheck(Product $product){
+    function notifyCheck(Product $product)
+    {
         $product->line_notify = ($product->line_notify == "Y" ? "N" : "Y");
         $product->save();
         return redirect('products');

@@ -19,8 +19,15 @@
             <div class="card-header border-0">
  <div class="row align-items-center">
  <div class="col">
- <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($case_product->detail_products)}} รายการ)<p> คุณ {{$case_product->customer->name}} วันที่แถมสินค้า {{$case_product->time}}</h3> </p>
- </div>
+ <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($case_product->detail_products)}} รายการ)
+<p>
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+        <div class="card-body text-primary">
+          <p class="card-text">คุณ {{$case_product->customer->name}}</p>
+          <p class="card-text">วันที่แถมสินค้า {{$case_product->time}}</p>
+        </div>
+      </div>
+
  <div class="col text-right">
  {{-- <a href="{{route('case_product.create')}}" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล</a> --}}
     </div>

@@ -46,7 +46,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 {!! Form::label('customer', 'ลูกค้า'); !!}
-                                <select class="form-control" name="customer_id" id="customer_id">
+                                <select class="form-control" name="customer_id" id="customer_id" disabled>
 
                                 @forelse ($customer as $item)
                                 @php
