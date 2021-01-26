@@ -105,15 +105,6 @@
                     </div>
                 </div>
 
-
-                  
-
-                    <div class="row col-2">
-                        <div class="col">
-                            {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
-                            <a href="{{url('case_product')}}" class="btn btn-primary" role="button">ย้อนกลับ</a>
-                    </div>
-
                     {!! Form::close() !!}
             </div>
         </div>
