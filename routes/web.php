@@ -44,13 +44,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/line', 'ProductController@line');
 
     Route::get('/notify_check/{product}', 'ProductController@notifyCheck');
-
 });
 
 
-    Route::post('detail_product/create', 'DetailproductController@store');
-    Route::resource('detail_product', 'DetailproductController');
+Route::post('detail_product/create', 'DetailproductController@store');
+Route::resource('detail_product', 'DetailproductController');
 
-    Route::post('case_product_update/{case_product}', 'CaseproductController@update');
-
-
+Route::post('case_product_update/{case_product}', 'CaseproductController@update');
