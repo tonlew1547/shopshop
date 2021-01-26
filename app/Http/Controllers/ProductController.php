@@ -150,7 +150,7 @@ class ProductController extends Controller
     public function line()
     {
 
-        $token = "RVOhWjIQBIfFrMtydp4uyh8FKsk2qpiBE42WCaFGTij"; //ใส่Token ที่copy เอาไว้
+        $token = "Y9FSWZa5PQNHNSEGKIc2pCjQ2QIM0DtfZDxpvxkqmcC"; //ใส่Token ที่copy เอาไว้
 
         $products = Product::where("line_notify", "Y")->get();
         if (count($products) > 0) {
