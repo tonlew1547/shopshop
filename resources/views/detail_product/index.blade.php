@@ -78,13 +78,15 @@
 
 
 
-           
+
                     <tr>
-                    <a class="nav-link" href="{{route('case_product.index')}}">
-                    {{-- <i class="ni ni-align-center"></i> --}}
-                    <span class="btn btn-success">ย้อนกลับ</span>
-                  </a>
-            
+                    <tr>
+                    <tr>
+                      
+                        <a href="{{url('case_product')}}" class="btn btn-primary" role="button">ย้อนกลับ</a>
+
+            </tr>
+            </tr>
             </tr>
             </div>
         </div>
