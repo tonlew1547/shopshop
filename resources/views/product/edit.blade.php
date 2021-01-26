@@ -1,5 +1,5 @@
 @extends('layouts.argon_template')
- 
+
  @section('content')
  <div class="row">
     <div class="col">
@@ -20,7 +20,7 @@
                 {!! Form::text('name', null, ['class' => 'form-control']); !!}
                 </div>
             </div>
-            
+
                 <div class="col">
                     <div class="form-group">
                     {!! Form::label('product_types_id', 'ประเภทชื่อสินค้า'); !!}
@@ -47,7 +47,7 @@
                                 {!! Form::text('quantity', null, ['class' => 'form-control']); !!}
                             </div>
                         </div>
- 
+
             </div>
                 <div class="row">
                     <div class="form-group">
@@ -58,6 +58,7 @@
                     <div class="row mt-2">
                         <div class="col">
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+                            <a href="{{url('products')}}" class="btn btn-primary" role="button">ย้อนกลับ</a>
                         </div>
                     </div>
                     {!! Form::close() !!}
