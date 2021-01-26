@@ -79,10 +79,10 @@
                                     $edit_product = isset($detail_product[$item->id]) ? $detail_product[$item->id]['product_id'] == $item->id ? 'checked' : '' : '';
                                     @endphp
                                     <tr>
-                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[]" id="product_id" value="{{$item->id}}" {{$edit_product}}>
+                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[{{$item->id}}]" id="product_id" value="{{$item->id}}" {{$edit_product}}>
                                         </td>
                                         <td>{{$item->name}}</td>
-                                        <td><input type="number" class="form-control" name="amount[]" id="amount" value="{{isset($detail_product[$item->id]) ? $detail_product[$item->id]->amount : 0}}"></td>
+                                        <td><input type="number" class="form-control" name="amount[{{$item->id}}]" id="amount" value="{{isset($detail_product[$item->id]) ? $detail_product[$item->id]->amount : 0}}"></td>
                                     </tr>
                                     @empty
 

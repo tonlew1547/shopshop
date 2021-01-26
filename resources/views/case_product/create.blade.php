@@ -76,10 +76,10 @@
                                 <tbody>
                                     @forelse ($product as $item)
                                     <tr>
-                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[]" id="product_id" value="{{$item->id}}">
+                                        <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[{{$item->id}}]" id="product_id" value="{{$item->id}}">
                                         </td>
                                         <td>{{$item->name}}</td>
-                                        <td><input type="number" class="form-control" name="amount[]" id="amount"></td>
+                                        <td><input type="number" class="form-control" name="amount[{{$item->id}}]" id="amount" value="0"></td>
                                     </tr>
                                     @empty
 
