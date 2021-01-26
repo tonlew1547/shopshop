@@ -78,14 +78,14 @@
 
 
 
-                {{-- <li class="nav-item"> --}}
+           
                     <tr>
-
                     <a class="nav-link" href="{{route('case_product.index')}}">
                     {{-- <i class="ni ni-align-center"></i> --}}
                     <span class="btn btn-success">ย้อนกลับ</span>
                   </a>
-                </li>
+            
+            </tr>
             </div>
         </div>
     </div>

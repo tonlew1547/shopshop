@@ -116,10 +116,18 @@ class CaseProductController extends Controller
 
         // dd($request->all());
 
-        DetailProduct::where('case_product_id', $case_product->id)->delete();
+        // DetailProduct::where('case_product_id', $case_product->id)->delete();
         if (isset($request->product_id) && count($request->product_id) > 0) {
+
             foreach ($request->product_id as $key => $value) {
+                $getdetail = DetailProduct::where('case_product_id', $case_product->id)->where('product_id', $value)->first();
                 $product = Product::find($value);
+
+                if ($getdetail) {
+                    $product->increment('quantity', $getdetail->amount);
+                    $getdetail->delete();
+                }
+
                 $detail = new DetailProduct();
                 $detail->cost = $product->cost;
                 $detail->amount = $request->amount[$key];
@@ -133,9 +141,6 @@ class CaseProductController extends Controller
         }
 
 
-        $context = stream_context_create($headerOptions);
-        $result = file_get_contents("https://notify-api.line.me/api/notify", FALSE, $context);
-        $res = json_decode($result);
         return redirect()->route('case_product.index')->with('status', 'บันทึกข้อมูลสำเร็จ');
     }
 

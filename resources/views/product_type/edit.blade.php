@@ -25,7 +25,8 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}  
+                      
                     </div>
                 </div>
                 {!! Form::close() !!}

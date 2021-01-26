@@ -46,7 +46,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 {!! Form::label('customer', 'ลูกค้า'); !!}
-                                <select class="form-control" name="customer_id" id="customer_id" disabled>
+                                <select class="form-control" name="customer_id" id="customer_id" >
 
                                 @forelse ($customer as $item)
                                 @php
@@ -76,13 +76,13 @@
                                 <tbody>
                                     @forelse ($product as $item)
                                     @php
-                                    $edit_product = $detail_product[$item->id]->product_id == $item->id ? 'checked' : '';
+                                    $edit_product = isset($detail_product[$item->id]) ? $detail_product[$item->id]['product_id'] == $item->id ? 'checked' : '' : '';
                                     @endphp
                                     <tr>
                                         <td scope="row"><input type="checkbox" class="form-check-input" name="product_id[]" id="product_id" value="{{$item->id}}" {{$edit_product}}>
                                         </td>
                                         <td>{{$item->name}}</td>
-                                        <td><input type="number" class="form-control" name="amount[]" id="amount" value="{{$detail_product[$item->id]->amount}}"></td>
+                                        <td><input type="number" class="form-control" name="amount[]" id="amount" value="{{isset($detail_product[$item->id]) ? $detail_product[$item->id]->amount : 0}}"></td>
                                     </tr>
                                     @empty
 
@@ -99,6 +99,7 @@
 
                     <div class="row mt-2 col-2">
                         <div class="col">
+                            
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
 
 

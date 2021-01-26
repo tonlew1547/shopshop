@@ -139,8 +139,8 @@ class ProductController extends Controller
     {
 
         $products = Product::find($id);
+        unlink(public_path('images/' . $products->image));
         $products->delete();
-        // unlink(public_path('images/products/' . $products->image));
         return back();
     }
 
