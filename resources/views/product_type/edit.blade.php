@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            
+
         <div class="card-body pt-0" style="min-height: 50vh">
                 {!! Form::model($product_type, ['url' => route('product_types.update',$product_type->id),'method' => 'put','enctype'=>"multipart/form-data"])!!}
                 <div class="row">

@@ -1,5 +1,5 @@
 @extends('layouts.argon_template')
- 
+
  @section('content')
  <div class="row">
     <div class="col">
@@ -20,7 +20,7 @@
                 {!! Form::text('name', null, ['class' => 'form-control']); !!}
                 </div>
             </div>
-            
+
                 {{-- <div class="col">
                     <div class="form-group">
                     {!! Form::label('product_types_id', 'ประเภทชื่อสินค้า'); !!}
@@ -40,14 +40,17 @@
                             {!! Form::label('address', 'ที่อยู่'); !!}
                             {!! Form::text('address', null, ['class' => 'form-control']); !!}
                         </div>
-                    </div>  
+                    </div>
             </div>
                     <div class="row mt-2">
                         <div class="col">
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+
+
                         </div>
                     </div>
                     {!! Form::close() !!}
+
                    </div>
                 </div>
             </div>

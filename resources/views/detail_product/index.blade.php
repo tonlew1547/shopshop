@@ -22,7 +22,7 @@
  <h3 class="mb-0">รายละเอียดเพิ่มเติม ({{count($case_product->detail_products)}} รายการ)
 <p>
     <div class="card border-primary mb-3" style="max-width: 18rem;">
-        <div class="card-body text-primary">
+        <div class="card-body text-dark ">
           <p class="card-text">คุณ {{$case_product->customer->name}}</p>
           <p class="card-text">วันที่แถมสินค้า {{$case_product->time}}</p>
         </div>
@@ -43,21 +43,21 @@
                             <th scope="col">ชิ่อสินค้า</th>
                             <th scope="col">จำนวนของแถม</th>
                             <th scope="col">ราคาต้นทุน</th>
-                    
-                            
+
+
                             <th scope="col" style="width: 10%"></th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($case_product->detail_products as $item)
-                    
+
                         <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->product->name}}</td>
                                 <td>{{$item->amount}}</td>
                                 <td>{{$item->cost}}</td>
-                                
-                               
+
+
                              <td>
                       </form>
                         </td>
@@ -75,9 +75,21 @@
                         </div>
                     </div>
                 </div> --}}
+
+
+
+                {{-- <li class="nav-item"> --}}
+                    <tr>
+
+                    <a class="nav-link" href="{{route('case_product.index')}}">
+                    {{-- <i class="ni ni-align-center"></i> --}}
+                    <span class="btn btn-success">ย้อนกลับ</span>
+                  </a>
+                </li>
             </div>
         </div>
     </div>
+
 @endsection
 @section('script')
 
@@ -100,3 +112,4 @@
 @section('style')
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 @endsection
+

@@ -24,7 +24,7 @@
             </div>
             <div class="card-body pt-0" style="min-height: 50vh">
                 <form action="{{url('case_product_update/'.$case_product->id)}}" method="POST" enctype="multipart/form-data">
-                    @csrf 
+                    @csrf
                     <input type="hidden" name="id" value="{{$case_product->id}}">
                     <div class="row">
                         <div class="col-15 col-sm-4">
@@ -74,7 +74,7 @@
                                 </thead>
 
                                 <tbody>
-                                    @forelse ($product as $item) 
+                                    @forelse ($product as $item)
                                     @php
                                     $edit_product = $detail_product[$item->id]->product_id == $item->id ? 'checked' : '';
                                     @endphp
@@ -97,14 +97,17 @@
 
 
 
-                    <div class="row mt-2">
+                    <div class="row mt-2 col-2">
                         <div class="col">
                             {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
-                        </div>
+
+
+
                     </div>
                     {!! Form::close() !!}
             </div>
         </div>
     </div>
 </div>
+
 @endsection
