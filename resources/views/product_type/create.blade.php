@@ -18,14 +18,14 @@
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
-                {!! Form::label('name', 'ชื่อสินค้าของแถม'); !!}
-                {!! Form::text('name', null, ['class' => 'form-control']); !!}
+                <label for="name">ชื่อสินค้าของแถม</label>
+                <input class="form-control" name="name" type="text" id="name"required>
                 </div>
             </div>
         </div>
                     <div class="row mt-2">
                         <div class="col">
-                            {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+                            <input class="btn btn-primary" type="submit" value="บันทึก">
                             <a href="{{url('product_types')}}" class="btn btn-primary" role="button">ย้อนกลับ</a>
                         </div>
                     </div>

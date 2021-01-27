@@ -18,44 +18,44 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                {!! Form::label('name', 'ชื่อสินค้า'); !!}
-                {!! Form::text('name', null, ['class' => 'form-control']); !!}
+                    <label for="name">ชื่อสินค้า</label>
+                    <input class="form-control" name="name" type="text" id="name"required>
                 </div>
             </div>
 
                 <div class="col">
                     <div class="form-group">
-                    {!! Form::label('product_types_id', 'ประเภทชื่อสินค้า'); !!}
-                    {!! Form::select('product_types_id', $productTypes,null,
-                    ['class' => 'form-control']); !!}
+                        {!! Form::label('product_types_id', 'ประเภทชื่อสินค้า'); !!}
+                        {!! Form::select('product_types_id', $productTypes,null,
+                        ['class' => 'form-control']); !!}
                 </div>
             </div>
         </div>
            <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        {!! Form::label('cost', 'ราคาทุน'); !!}
-                        {!! Form::text('cost', null, ['class' => 'form-control']); !!}
+                        <label for="cost">ราคาทุน</label>
+                        <input class="form-control" name="cost" type="text" id="cost"required>
                     </div>
                 </div>
 
                         <div class="col-6">
                             <div class="form-group">
-                                {!! Form::label('quantity', 'จำนวนคงเหลือ'); !!}
-                                {!! Form::text('quantity', null, ['class' => 'form-control']); !!}
+                                <label for="quantity">จำนวนคงเหลือ</label>
+                                <input class="form-control" name="quantity" type="text" id="quantity"required>
                             </div>
                         </div>
 
-            </div>
+        </div>
                 <div class="row">
                     <div class="form-group">
-                        {!! Form::label('image', 'รูปภาพ'); !!}
-                        {!! Form::file('image', null, ['class' => 'form-control-file']); !!}
+                        <label for="image">รูปภาพ</label>
+                        <input name="image" type="file" id="image">
                     </div>
                 </div>
                     <div class="row mt-2">
                         <div class="col">
-                            {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+                            <input class="btn btn-primary" type="submit" value="บันทึก">
                             <a href="{{url('products')}}" class="btn btn-primary" role="button">ย้อนกลับ</a>
                         </div>
                     </div>
